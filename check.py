@@ -1,3 +1,4 @@
+import os
 import requests
 import smtplib
 from email.message import EmailMessage
@@ -18,10 +19,10 @@ websites = [
     "https://orukal.com/"
 ]
 
-EMAIL = "sony@lifeboat.co.in"
-PASSWORD = "gulx piar hibe jxuz"
-
-TO_EMAIL = "sonycheviti@gmail.com"
+# Render Environment Variables
+EMAIL = os.getenv("EMAIL")
+PASSWORD = os.getenv("PASSWORD")
+TO_EMAIL = os.getenv("TO_EMAIL")
 
 
 def send_mail(subject, body):
